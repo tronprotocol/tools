@@ -59,13 +59,13 @@ public class ArchiveManifestTest {
 
   @Test
   public void testRebuild() {
-    String[] args = new String[] { "-d", OUTPUT_DIRECTORY ,"--r"};
+    String[] args = new String[] { "-d",OUTPUT_DIRECTORY,"--r"};
     Assert.assertEquals(0,ArchiveManifest.run(args));
   }
 
   @Test
   public void testNoRebuild() {
-    String[] args = new String[] { "-d", OUTPUT_DIRECTORY};
+    String[] args = new String[] { "-d",OUTPUT_DIRECTORY};
     Assert.assertEquals(0,ArchiveManifest.run(args));
   }
 
@@ -77,14 +77,14 @@ public class ArchiveManifestTest {
 
   @Test
   public void testMaxManifest() {
-    String[] args = new String[] {"-d", OUTPUT_DIRECTORY, "-m", "128" , "--r"};
+    String[] args = new String[] {"-d",OUTPUT_DIRECTORY, "-m", "128", "--r"};
     Assert.assertEquals(0,ArchiveManifest.run(args));
   }
 
   @Test
   public void testNotExist() {
-    String[] args = new String[] {"-d", OUTPUT_DIRECTORY + File.separator + UUID.randomUUID()
-        ,"--rewrite--manifest"};
+    String[] args = new String[] {"-d",OUTPUT_DIRECTORY + File.separator + UUID.randomUUID(),
+        "--rewrite--manifest"};
     Assert.assertEquals(404,ArchiveManifest.run(args));
   }
 
@@ -93,7 +93,7 @@ public class ArchiveManifestTest {
     File file = new File(OUTPUT_DIRECTORY + File.separator + UUID.randomUUID());
     file.mkdirs();
     file.deleteOnExit();
-    String[] args = new String[] {"-d", file.toString(), "--rewrite--manifest"};
+    String[] args = new String[] {"-d",file.toString(), "--rewrite--manifest"};
     Assert.assertEquals(0,ArchiveManifest.run(args));
   }
 

@@ -41,7 +41,7 @@ check.dependsOn 'lint'
 
 checkstyle {
     toolVersion = "${versions.checkstyle}"
-    configFile = file("../framework/config/checkstyle/checkStyleAll.xml")
+    configFile = file("../db-repair/framework/config/checkstyle/checkStyleAll.xml")
 }
 
 checkstyleMain {

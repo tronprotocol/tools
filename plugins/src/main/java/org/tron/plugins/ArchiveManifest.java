@@ -93,7 +93,7 @@ public class ArchiveManifest implements Callable<Boolean> {
     System.exit(code);
   }
 
-  public static int run (String[] args) {
+  public static int run(String[] args) {
     Args parameters = new Args();
     JCommander jc = JCommander.newBuilder()
         .addObject(parameters)
@@ -106,8 +106,8 @@ public class ArchiveManifest implements Callable<Boolean> {
     }
 
     if (!parameters.rewrite) {
-      logger.info("Need --rewrite--manifest.");
-      System.out.println("Need --rewrite--manifest, skip");
+      logger.info("Need --rewrite--manifest or --r.");
+      System.out.println("Need --rewrite--manifest or --r, skip");
       return 0;
     }
 
